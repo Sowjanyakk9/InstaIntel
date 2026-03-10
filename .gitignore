@@ -1,0 +1,13 @@
+/.dockerignore
+/.github
+/.vscode
+/__pycache__
+/app.py
+/assets
+/backend.py
+/data
+/docs
+/infrastructure
+/instaintel-frontend
+/models
+/notebooks
