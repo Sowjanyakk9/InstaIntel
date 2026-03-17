@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from app.models.users import User
-from app.core.security import hash_password, verify_password
+from app.core.db.security import hash_password, verify_password
 
 
 def register_user(db: Session, name: str, email: str, password: str):
