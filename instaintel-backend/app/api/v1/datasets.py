@@ -3,7 +3,7 @@ from typing import Dict, List
 from fastapi import APIRouter, Depends, HTTPException, UploadFile
 from sqlalchemy.orm import Session
 
-from app.core.rbac import get_current_user
+from app.core.db.rbac import get_current_user
 from app.db.session import get_db
 
 from app.models.alerts import Alert
