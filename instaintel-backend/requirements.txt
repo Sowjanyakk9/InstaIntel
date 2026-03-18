@@ -9,3 +9,4 @@ passlib[bcrypt]
 pandas
 numpy
 scikit-learn
+psycopg2-binary
