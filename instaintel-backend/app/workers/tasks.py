@@ -52,7 +52,6 @@ from app.services.dashboard_assembly_service import (
     build_dashboard_definition,
     save_dashboard_to_db,
 )
-from app.services.automation_service import run_automation_pipeline
 from app.services.notification_service import (
     evaluate_notification_triggers,
     send_email_notification,
@@ -437,6 +436,8 @@ def dashboard_stage(dataset_id: int) -> None:
 
 @celery.task
 def run_automation(dataset_id: int, triggered_by: str):
+    from app.services.automation_service import run_automation_pipeline
+
     db = SessionLocal()
     try:
         run_automation_pipeline(db, dataset_id, triggered_by)
