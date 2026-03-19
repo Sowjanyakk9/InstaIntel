@@ -2,8 +2,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-
-    DATABASE_URL: str = "postgresql://postgres:password@localhost:5432/instaintel"
+    DATABASE_URL: str  # no default, must come from environment
 
     JWT_SECRET: str = "CHANGE_THIS_SECRET"
     JWT_ALGORITHM: str = "HS256"
@@ -13,6 +12,10 @@ class Settings(BaseSettings):
     S3_REGION: str = "us-east-1"
 
     REDIS_URL: str = "redis://localhost:6379/0"
+
+    class Config:
+        env_file = ".env"
+        extra = "allow"
 
 
 settings = Settings()
